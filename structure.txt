@@ -1,0 +1,58 @@
+D:\PERSONAL\WORKPLACE\COOKFOOD
+|   app.py
+|   requirements.txt
+|   structure.txt
+|
++---migrations
+|   |   alembic.ini
+|   |   env.py
+|   |   README
+|   |   script.py.mako
+|   |
+|   +---versions
+|   |   |   cef223b62db9_users_table_added.py
+|   |   |
+|   |   \---__pycache__
+|   |           cef223b62db9_users_table_added.cpython-38.pyc
+|   |
+|   \---__pycache__
+|           env.cpython-38.pyc
+|
++---my_project
+|   |   data.sqlite
+|   |   __init__.py
+|   |
+|   +---login
+|   |   |   forms.py
+|   |   |   view.py
+|   |   |   __init__.py
+|   |   |
+|   |   \---templates
+|   |       \---login
+|   +---sign_up
+|   |   |   forms.py
+|   |   |   models.py
+|   |   |   view.py
+|   |   |   __init__.py
+|   |   |
+|   |   +---templates
+|   |   |   \---sign_up
+|   |   |           list.html
+|   |   |           sign_up.html
+|   |   |
+|   |   \---__pycache__
+|   |           forms.cpython-38.pyc
+|   |           models.cpython-38.pyc
+|   |           view.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |
+|   +---templates
+|   |       base.html
+|   |       index.html
+|   |
+|   \---__pycache__
+|           app.cpython-38.pyc
+|           __init__.cpython-38.pyc
+|
+\---__pycache__
+        app.cpython-38.pyc
