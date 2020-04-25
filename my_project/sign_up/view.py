@@ -17,12 +17,17 @@ def signup():
         password = form.password.data
 
         user = User(email=email, password=password)
+        user_info = UserInfo(first_name=first_name, last_name=last_name)
+        
+
+        user.usersinfo.append(user_info)
+
         db.session.add(user)
         db.session.commit()
 
-        user_info = UserInfo(first_name=first_name, last_name=last_name, email=email)
-        db.session.add(user_info)
-        db.session.commit()
+        # user_info = UserInfo(first_name=first_name, last_name=last_name, email=email)
+        # db.session.add(user_info)
+        # db.session.commit()
 
         return redirect(url_for('signup_view_bp.view_users'))
 

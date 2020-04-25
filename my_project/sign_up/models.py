@@ -18,6 +18,7 @@ class User(db.Model, UserMixin):
 
 
     def __init__(self, email, password):
+
         self.email = email
         self.password_hash = bcrypt.generate_password_hash(password=password)
 
@@ -36,12 +37,14 @@ class UserInfo(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(80), nullable=False)
     last_name = db.Column(db.String(80), nullable=False)
-    email = db.Column(db.Text, nullable=False)
+    email = db.Column(db.Integer, db.ForeignKey('users.email'),
+        nullable=False)
 
-    def __init__(self, first_name, last_name, email):
+    user = db.relationship('User',backref=db.backref('usersinfo', lazy=True))
+
+    def __init__(self, first_name, last_name):
         self.first_name = first_name
         self.last_name = last_name
-        self.email = email
 
     def __repr__(self):
-        return "Name: {} {} Email: {}".format(self.first_name, self.last_name, self.email)
+        return "Name: {} {} Email: {}".format(self.first_name, self.last_name, self.user)
