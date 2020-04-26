@@ -1,5 +1,8 @@
 {% extends "base.html" %} {% block content %}
 <div class="jumbotron">
+    {% with messages = get_flashed_messages() %} {% if messages %} {% for message in messages %}
+    <p>{{message}} <a href="{{url_for('login_view_bp.login')}}">Login</a></p>
+    {% endfor %} {% endif %} {% endwith %}
     <form method="POST">
         {{ form.hidden_tag() }} {{ form.first_name.label }} <br> {{ form.first_name}} <br> {{ form.last_name.label }} <br> {{ form.last_name}} <br> {{ form.email.label}} <br> {{ form.email}} <br> {{ form.password.label }} <br> {{ form.password}} <br>        {{ form.con_password.label}} <br> {{ form.con_password }} {{ form.submit() }}
     </form>

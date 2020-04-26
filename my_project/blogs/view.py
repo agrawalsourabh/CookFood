@@ -1,5 +1,6 @@
 from my_project import app, db
 from flask import Blueprint, render_template, redirect, url_for
+from flask_login import login_required, current_user
 
 # Forms
 from my_project.blogs.forms import CreateBlog
@@ -7,6 +8,7 @@ from my_project.blogs.forms import CreateBlog
 create_blog_bp = Blueprint("create_blog_bp", __name__, template_folder="templates")
 
 @create_blog_bp.route("/", methods=['GET', 'POST'])
+@login_required
 def create_blog():
     form = CreateBlog()
 

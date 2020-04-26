@@ -23,9 +23,11 @@ login_manager.login_view = 'login'  # View called login
 from .sign_up.view import signup_view_bp
 from .login.view import login_view_bp
 from my_project.blogs.view import create_blog_bp
+from my_project.account.view import account_view_bp
 from my_project.error_pages.error_handler_view import error_pages_bp
 
 app.register_blueprint(signup_view_bp, url_prefix='/sign_up')
 app.register_blueprint(login_view_bp, url_prefix='/login')
 app.register_blueprint(create_blog_bp, url_prefix='/blogs')
+app.register_blueprint(account_view_bp)
 app.register_blueprint(error_pages_bp)

@@ -1,5 +1,5 @@
 from my_project import app, db
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, flash
 from my_project.sign_up.forms import SignUp
 
 from my_project.sign_up.models import User, UserInfo
@@ -16,6 +16,12 @@ def signup():
         email = form.email.data
         password = form.password.data
 
+        check_user = UserInfo.query.filter_by(email=email).first()
+
+        if check_user:
+            return redirect(url_for('signup_view_bp.signup'))
+            
+
         user = User(email=email, password=password)
         user_info = UserInfo(first_name=first_name, last_name=last_name)
         
@@ -25,10 +31,7 @@ def signup():
         db.session.add(user)
         db.session.commit()
 
-        # user_info = UserInfo(first_name=first_name, last_name=last_name, email=email)
-        # db.session.add(user_info)
-        # db.session.commit()
-
+    
         return redirect(url_for('signup_view_bp.view_users'))
 
     return  render_template('sign_up/sign_up.html', form=form)
