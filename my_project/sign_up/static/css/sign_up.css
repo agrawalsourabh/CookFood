@@ -1,0 +1,20 @@
+:root {
+    --primary_color: #f9a825;
+    --accent_color: #FBC02D;
+    --nav_item_color: white;
+    --nav_item_color_hover: #F57F17;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.center-container {
+    background-color: red;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

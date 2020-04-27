@@ -24,7 +24,13 @@ def account_view():
     if form.validate_on_submit():
         first_name = form.first_name.data
         last_name = form.last_name.data
-        email = form.email.data
+        email = form.email.data # disabled
+
+        user_info.first_name = first_name
+        user_info.last_name = last_name
+
+        db.session.add(user_info)
+        db.session.commit()
 
         return redirect('/welcome')
 

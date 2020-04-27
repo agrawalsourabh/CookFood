@@ -1,22 +1,44 @@
 from my_project import app, db
-from flask import Blueprint, render_template, redirect, url_for
+from flask import Blueprint, render_template, redirect, url_for, flash
 from flask_login import login_required, current_user
 
 # Forms
 from my_project.blogs.forms import CreateBlog
 
-create_blog_bp = Blueprint("create_blog_bp", __name__, template_folder="templates")
+# Models
+from my_project.blogs.models import Blog
 
-@create_blog_bp.route("/", methods=['GET', 'POST'])
+blog_bp = Blueprint("blog_bp", __name__, template_folder="templates")
+
+@blog_bp.route("/")
+@login_required
+def blog():
+    return render_template('blogs/blog.html')
+
+@blog_bp.route("/create_blog", methods=['GET', 'POST'])
 @login_required
 def create_blog():
     form = CreateBlog()
 
     if form.validate_on_submit():
         dish_name = form.dish_name.data
-        dish_receipe = form.dish_reciepe
+        dish_receipe = form.dish_reciepe.data
 
-        return redirect(url_for('create_blog'))
+        blog = Blog(email=current_user.email, dish_name=dish_name, dish_receipe=dish_receipe)
+
+        db.session.add(blog)
+        db.session.commit()
+
+        flash("Blog  created successfully")
+
+        return redirect(url_for('blog_bp.view_blogs'))
 
     return render_template('blogs/create_blog.html', form=form)
 
+
+@blog_bp.route("/view_blogs")
+@login_required
+def view_blogs():
+
+    blogs_list = Blog.query.all()
+    return render_template('blogs/view_blogs.html', blogs_list=blogs_list)

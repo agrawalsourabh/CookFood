@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block content %}
+<div class="jumbotron">
+    <a href="{{url_for('blog_bp.create_blog')}}">Create a new blog</a>
+    <a href="{{url_for('blog_bp.view_blogs')}}"> View all blogs </a>
+</div>
+{% endblock %}

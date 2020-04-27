@@ -8,10 +8,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar fixed-top navbar-expand-lg" style=" background-color: #F9A825;">
         <!-- Navbar content -->
         <a class="navbar-brand" href="/">CookFood</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +26,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/sign_up/view_users">Users</a>
                 </li>
-
                 {% if current_user.is_authenticated %}
                 <li class="nav-item">
                     <a class="nav-link" href="/blogs">Blogs</a>
@@ -33,21 +33,20 @@
 
                 <li class="nav-item">
                     <a class="nav-link" href="/account">Account</a>
-                </li>
-
-                {% endif %}
+                </li>{% endif %}
 
             </ul>
 
             <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/sign_up">SignUp</a>
-                    </li>
+
                     {% if current_user.is_authenticated %}
                     <li class="nav-item">
                         <a class="nav-link" href="{{url_for('logout')}}">Logout</a>
                     </li> {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="/sign_up">SignUp</a>
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/login">Login</a>
                     </li>

@@ -1,0 +1,52 @@
+:root {
+    --primary_color: #f9a825;
+    --accent_color: #FBC02D;
+    --nav_item_color: white;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.container {
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app-title {
+    color: var(--primary_color);
+}
+
+.app-title:hover {
+    color: var(--accent_color);
+    text-decoration: none;
+}
+
+#signin_btn {
+    width: 45%;
+    position: relative;
+}
+
+#signup_btn {
+    width: 45%;
+    position: relative;
+}
+
+#blank_div {
+    width: 10%;
+    position: relative;
+}
+
+.btn-color {
+    background-color: var(--primary_color);
+    color: white;
+}
+
+.btn-color:hover {
+    background-color: var(--accent_color);
+    color: white;
+}

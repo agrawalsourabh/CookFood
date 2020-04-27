@@ -6,6 +6,7 @@ from flask_login import login_user, current_user, login_required
 
 login_view_bp = Blueprint('login_view_bp', __name__, template_folder='templates')
 
+
 @login_view_bp.route('/', methods=['GET', 'POST'])
 def login():
     form = Login()
