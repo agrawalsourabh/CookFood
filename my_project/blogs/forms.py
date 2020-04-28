@@ -6,4 +6,4 @@ from wtforms import ValidationError
 class CreateBlog(FlaskForm):
     dish_name = StringField("Dish Name")
     dish_reciepe = TextAreaField("Receipe")
-    save_blog = SubmitField("Save Blog")
+    save_blog = SubmitField("Add")

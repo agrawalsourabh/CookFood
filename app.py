@@ -28,7 +28,7 @@ def index():
             #     return flask.abort(400)
 
             if next == None or not next[0] == '/':
-                next = '/welcome'
+                next = url_for('blog_bp.view_blogs')
 
             return redirect(next)
 

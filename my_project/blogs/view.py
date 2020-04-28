@@ -1,6 +1,7 @@
 from my_project import app, db
 from flask import Blueprint, render_template, redirect, url_for, flash
 from flask_login import login_required, current_user
+from sqlalchemy import desc
 
 # Forms
 from my_project.blogs.forms import CreateBlog
@@ -40,5 +41,5 @@ def create_blog():
 @login_required
 def view_blogs():
 
-    blogs_list = Blog.query.all()
+    blogs_list = Blog.query.order_by(desc(Blog.date)).all()
     return render_template('blogs/view_blogs.html', blogs_list=blogs_list)

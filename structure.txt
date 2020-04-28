@@ -10,10 +10,30 @@ D:\PERSONAL\WORKPLACE\COOKFOOD
 |   |   script.py.mako
 |   |
 |   +---versions
+|   |   |   0c0005be3f08_blogs_table_created.py
+|   |   |   113a3ef1a172_database_updated.py
+|   |   |   3ab95ce7aa1b_database_updated.py
+|   |   |   5791dfeb3c8a_added_usersinfo_table.py
+|   |   |   69b3ecb7f1c5_update_user_id_column_in_user_table.py
+|   |   |   6db91fd04d5a_database_updated.py
+|   |   |   95be828891c5_database_updated.py
+|   |   |   ad6e1774075a_.py
 |   |   |   cef223b62db9_users_table_added.py
+|   |   |   eaa530d80273_added_usersinfo_table.py
+|   |   |   eee07ca69633_database_updated.py
 |   |   |
 |   |   \---__pycache__
+|   |           0c0005be3f08_blogs_table_created.cpython-38.pyc
+|   |           113a3ef1a172_database_updated.cpython-38.pyc
+|   |           3ab95ce7aa1b_database_updated.cpython-38.pyc
+|   |           5791dfeb3c8a_added_usersinfo_table.cpython-38.pyc
+|   |           69b3ecb7f1c5_update_user_id_column_in_user_table.cpython-38.pyc
+|   |           6db91fd04d5a_database_updated.cpython-38.pyc
+|   |           95be828891c5_database_updated.cpython-38.pyc
+|   |           ad6e1774075a_.cpython-38.pyc
 |   |           cef223b62db9_users_table_added.cpython-38.pyc
+|   |           eaa530d80273_added_usersinfo_table.cpython-38.pyc
+|   |           eee07ca69633_database_updated.cpython-38.pyc
 |   |
 |   \---__pycache__
 |           env.cpython-38.pyc
@@ -22,18 +42,76 @@ D:\PERSONAL\WORKPLACE\COOKFOOD
 |   |   data.sqlite
 |   |   __init__.py
 |   |
+|   +---account
+|   |   |   forms.py
+|   |   |   view.py
+|   |   |   __init__.py
+|   |   |
+|   |   +---templates
+|   |   |   \---account
+|   |   |           update_account.html
+|   |   |
+|   |   \---__pycache__
+|   |           forms.cpython-38.pyc
+|   |           view.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |
+|   +---blogs
+|   |   |   forms.py
+|   |   |   models.py
+|   |   |   view.py
+|   |   |   __init__.py
+|   |   |
+|   |   +---templates
+|   |   |   \---blogs
+|   |   |           blog.html
+|   |   |           create_blog.html
+|   |   |           view_blogs.html
+|   |   |
+|   |   \---__pycache__
+|   |           forms.cpython-38.pyc
+|   |           models.cpython-38.pyc
+|   |           view.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |
+|   +---error_pages
+|   |   |   error_handler_view.py
+|   |   |   __init__.py
+|   |   |
+|   |   +---templates
+|   |   |   \---error_pages
+|   |   |           404.html
+|   |   |
+|   |   \---__pycache__
+|   |           error_handler_view.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |
 |   +---login
 |   |   |   forms.py
 |   |   |   view.py
 |   |   |   __init__.py
 |   |   |
-|   |   \---templates
-|   |       \---login
+|   |   +---templates
+|   |   |   \---login
+|   |   |           login.html
+|   |   |
+|   |   \---__pycache__
+|   |           forms.cpython-38.pyc
+|   |           view.cpython-38.pyc
+|   |           __init__.cpython-38.pyc
+|   |
+|   +---res
+|   |       colors.py
+|   |
 |   +---sign_up
 |   |   |   forms.py
 |   |   |   models.py
 |   |   |   view.py
 |   |   |   __init__.py
+|   |   |
+|   |   +---static
+|   |   |   \---css
+|   |   |           sign_up.css
 |   |   |
 |   |   +---templates
 |   |   |   \---sign_up
@@ -46,9 +124,18 @@ D:\PERSONAL\WORKPLACE\COOKFOOD
 |   |           view.cpython-38.pyc
 |   |           __init__.cpython-38.pyc
 |   |
+|   +---static
+|   |   +---css
+|   |   |       main.css
+|   |   |
+|   |   \---images
+|   |           default_blog.jpg
+|   |
 |   +---templates
 |   |       base.html
 |   |       index.html
+|   |       layout.html
+|   |       welcome.html
 |   |
 |   \---__pycache__
 |           app.cpython-38.pyc

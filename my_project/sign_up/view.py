@@ -1,5 +1,5 @@
 from my_project import app, db
-from flask import Blueprint, render_template, redirect, url_for, flash
+from flask import Blueprint, render_template, redirect, url_for
 from my_project.sign_up.forms import SignUp
 
 from my_project.sign_up.models import User, UserInfo
@@ -32,7 +32,7 @@ def signup():
         db.session.commit()
 
     
-        return redirect(url_for('signup_view_bp.view_users'))
+        return redirect(url_for('blog_bp.view_blogs'))
 
     return  render_template('sign_up/sign_up.html', form=form)
 

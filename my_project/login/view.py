@@ -27,7 +27,7 @@ def login():
             #     return flask.abort(400)
 
             if next == None or not next[0] == '/':
-                next = '/welcome'
+                next = '/blogs/view_blogs'
 
             return redirect(next)
 
