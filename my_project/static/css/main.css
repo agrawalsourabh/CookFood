@@ -8,8 +8,17 @@
 
 html,
 body {
-    height: 100%;
+    height: 80%;
     background-color: var(--backgrond_color);
+}
+
+.parent-container {
+    width: 96%;
+    height: 90%;
+    margin-top: 5%;
+    margin-left: 2%;
+    margin-right: 2%;
+    position: absolute;
 }
 
 nav>a {
@@ -40,7 +49,7 @@ nav>a:hover {
     height: 100%;
     width: 80%;
     display: flex;
-    margin-top: 2%;
+    margin-top: 7%;
     margin-left: 10%;
     justify-content: center;
     align-items: center;
@@ -101,4 +110,34 @@ nav>a:hover {
 .form-div {
     width: 50%;
     height: 80%;
+}
+
+.update-btn {
+    margin-top: 5%;
+    width: 62%;
+}
+
+.mycontent-left {
+    padding-left: 7%;
+    padding-top: 2%;
+    height: 100%;
+    position: relative;
+}
+
+.padded_label {
+    padding-top: 15px;
+    color: var(--primary_color);
+    /* margin-top: 15px;
+    padding-bottom: 10px; */
+    /* color: red; */
+}
+
+.card-container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.card {
+    margin-top: 3%;
 }

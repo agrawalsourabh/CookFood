@@ -13,7 +13,7 @@ class UpdateAccount(FlaskForm):
     email = StringField("Email")
 
     old_password = PasswordField("Password")
-    new_password = PasswordField("Password", validators=[EqualTo('con_password', message="Password must match!!!")])
+    new_password = PasswordField("New Password", validators=[EqualTo('con_password', message="Password must match!!!")])
     con_password = PasswordField("Confirm Password")
 
     submit = SubmitField("Update Account")

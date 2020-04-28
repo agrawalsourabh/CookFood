@@ -32,7 +32,7 @@ def signup():
         db.session.commit()
 
     
-        return redirect(url_for('blog_bp.view_blogs'))
+        return redirect('/')
 
     return  render_template('sign_up/sign_up.html', form=form)
 
