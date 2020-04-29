@@ -1,2 +1,2 @@
-# CookFood
+# Cook Food
 Social Network for cooks.
