@@ -23,16 +23,19 @@
 
         <div class="col-4 mycontent-left">
             <div class="position-fixed">
-                <div style="background-color: grey;  width: 200px; height: 200px;"></div>
-                <form class="form-row" method="POST">
+                <img src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" style="width: 200px; height: 200px;">
+                <form class="form-row" method="POST" enctype="multipart/form-data">
                     {{ form.hidden_tag() }}
                     <div class="form-group">
                         {{ form.email.label(class="padded_label")}} {{ form.email(value= user_info.email, class="form-control", readonly="readonly") }} {{form.first_name.label(class="padded_label")}} {{ form.first_name(class=" form-control ", value= user_info.first_name) }}
                         {{form.last_name.label(class="padded_label")}} {{ form.last_name(class="form-control ", value=user_info.last_name) }}
                     </div>
-
+                    <div class="form-group">
+                        {{ form.profile_pic}}
+                    </div>
                     <div class="update-btn">
                         {{ form.submit(class_="btn btn-block btn-color")}}
+                        <!-- <button type="submit">Uploooooad</button> -->
 
                     </div>
                 </form>
@@ -46,7 +49,7 @@
             <!-- <div class="container-center"> -->
             <div class="card-container">
                 <div class="card w-50">
-                    <img src="{{url_for('static', filename='images/default_blog.jpg')}}" class="card-img-top">
+                    <img src="{{ url_for('static', filename='images/default_blog.jpg') }}" class="card-img-top">
                     <div class="card-body">
                         <h5 class="card-title">{{blog.dish_name}}</h5>
                         <p class="card-text">{{blog.dish_receipe}}</p>

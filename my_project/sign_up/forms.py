@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, IntegerField, SubmitField, RadioField, PasswordField
 from wtforms.validators import DataRequired, Email, EqualTo
 from wtforms import ValidationError
+from flask_wtf.file import FileAllowed, FileField
 
 from my_project.sign_up.models import User
 

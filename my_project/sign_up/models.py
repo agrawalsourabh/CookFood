@@ -39,6 +39,7 @@ class UserInfo(db.Model):
     last_name = db.Column(db.String(80), nullable=False)
     email = db.Column(db.Integer, db.ForeignKey('users.email'),
         nullable=False)
+    profile_image = db.Column(db.String(80), nullable=False, default='default.png')
 
     user = db.relationship('User',backref=db.backref('usersinfo', lazy=True))
 
