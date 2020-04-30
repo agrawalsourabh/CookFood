@@ -1,38 +1,27 @@
 {% extends "base.html" %} {% block content %}
 
-<!-- <div class="jumbotron">
-    <form method="POST">
-        {{ form.hidden_tag() }} {{ form.first_name.label}}
-        <br> {{ form.first_name(value= user_info.first_name) }}
-        <br> {{ form.last_name.label}}
-        <br> {{ form.last_name(value=user_info.last_name) }}
-        <br> {{ form.email.label}}
-        <br> {{ form.email(value= user_info.email) }}
-        <br> {{ form.old_password.label }} <br> {{ form.old_password }}
-        <br> {{ form.new_password.label }} <br> {{ form.new_password }}
-        <br> {{ form.con_password.label }}
-        <br> {{ form.con_password}}
-        <br> {{ form.submit}}
 
-
-    </form>
-</div> -->
 <div class="parent-container">
 
     <div class="row justify-content-md-center">
 
         <div class="col-4 mycontent-left">
             <div class="position-fixed">
-                <img src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" style="width: 200px; height: 200px;">
+
+                <img class="rounded-circle z-depth-1-half avatar-pic img-thumbnail" id="profile-img" src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" style="width: 200px; height: 200px;">
+
                 <form class="form-row" method="POST" enctype="multipart/form-data">
                     {{ form.hidden_tag() }}
                     <div class="form-group">
-                        {{ form.email.label(class="padded_label")}} {{ form.email(value= user_info.email, class="form-control", readonly="readonly") }} {{form.first_name.label(class="padded_label")}} {{ form.first_name(class=" form-control ", value= user_info.first_name) }}
-                        {{form.last_name.label(class="padded_label")}} {{ form.last_name(class="form-control ", value=user_info.last_name) }}
+                        {{ form.profile_pic(class="form-control", onchange="readURL(this);")}}
+                        <div class="user-details">
+                            {{ form.email.label(class="padded_label")}} {{ form.email(value= user_info.email, class="form-control", readonly="readonly") }} {{form.first_name.label(class="padded_label")}} {{ form.first_name(class=" form-control ", value= user_info.first_name) }}
+                            {{form.last_name.label(class="padded_label")}} {{ form.last_name(class="form-control ", value=user_info.last_name) }}
+                        </div>
                     </div>
-                    <div class="form-group">
-                        {{ form.profile_pic}}
-                    </div>
+                    <!-- <div class="form-group">
+                        
+                    </div> -->
                     <div class="update-btn">
                         {{ form.submit(class_="btn btn-block btn-color")}}
                         <!-- <button type="submit">Uploooooad</button> -->
