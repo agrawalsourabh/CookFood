@@ -3,7 +3,10 @@
 <div class="body-container">
     <div class="container-center">
         <div class="card w-50">
-            <img src="{{url_for('static', filename='images/default_blog.jpg')}}" class="card-img-top">
+            {% if blog.recipe_img == None %}
+            <img src="{{url_for('static', filename='images/default.jpg')}}" class="card-img-top"> {% else %}
+            <!-- if image is present -->
+            <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="card-img-top"> {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{blog.dish_name}}</h5>
                 <p class="card-text">{{blog.dish_receipe}}</p>

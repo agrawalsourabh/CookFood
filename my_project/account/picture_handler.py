@@ -56,3 +56,26 @@ def delete_file_if_exists(email):
         os.remove(file_jpg)
     if os.path.exists(file_jpeg):
         os.remove(file_jpeg)
+
+
+def add_dish_pic(pic_upload, blog_id):
+    filename = pic_upload.filename
+    ext_type = filename.split('.')[-1]
+
+    # email_hash = bcrypt.generate_password_hash(email).decode('utf-8')
+
+    delete_file_if_exists(blog_id)
+
+    storage_name = str(blog_id) + '.' + ext_type
+
+    filepath = os.path.join(current_app.root_path, 'static\images', storage_name)
+    print(filepath)
+    
+    output_size = (200, 200)
+
+    pic = Image.open(pic_upload)
+    pic.thumbnail(output_size)
+
+    pic.save(filepath)
+
+    return storage_name

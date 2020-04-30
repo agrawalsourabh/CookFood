@@ -1,0 +1,51 @@
+{% extends "base.html" %} {% block content %}
+
+
+<div class="parent-container">
+
+    <form method="POST" enctype="multipart/form-data">
+        <div class="row justify-content-md-center">
+
+            {{ form.hidden_tag() }}
+
+            <div class="col-4 mycontent-left">
+                <div>
+                    {% if blog.recipe_img == None %}
+                    <img src="{{ url_for('static', filename='images/default.jpg') }}" class=" z-depth-1-half avatar-pic img-thumbnail" id="dish_image"> {% else %}
+                    <img src="{{ url_for('static', filename='images/'+blog.recipe_img) }}" class=" z-depth-1-half avatar-pic img-thumbnail" id="dish_image"> {% endif %}
+                    <!-- input field -->
+                    {{ form.dish_img(class="form-control", onchange="readDishURL(this);") }}
+                </div>
+
+            </div>
+
+            <!-- Blog section -->
+
+            <div class="col-8 ">
+                <!-- <div style="background-color: red; width: 200px; height: 300px;"></div> -->
+
+                <div class="form-group">
+                    <div class="blog-details">
+                        {{ form.dish_name.label(class="padded_label")}}
+                        <!-- dish_name -->
+                        {{ form.dish_name(placeholder= blog.dish_name, class="form-control") }}
+                        <!-- dish_reciepe -->
+                        {{form.dish_reciepe.label(class="padded_label")}}
+                        <!-- dish_reciepe field -->
+                        {{ form.dish_reciepe(placeholder="Reciepe", class="form-control", rows="5") }}
+
+                        <div class="update-btn">
+                            {{ form.save_blog(class_="btn btn-block btn-color")}}
+                            <!-- <button type="submit">Uploooooad</button> -->
+
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    
+                </div> -->
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}

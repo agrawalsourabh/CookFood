@@ -47,6 +47,7 @@ def account_view():
         db.session.commit()
 
         return redirect(url_for('blog_bp.view_blogs'))
+        # return redirect(request.url)
 
     elif request.method == "GET":
         form.first_name.data = user_info.first_name
