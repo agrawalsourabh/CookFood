@@ -21,7 +21,7 @@ def add_profile_pic(pic_upload, email):
     filepath = os.path.join(current_app.root_path, 'static\profile_pics', storage_name)
     print(filepath)
     
-    output_size = (200, 200)
+    output_size = (400, 400)
 
     pic = Image.open(pic_upload)
     pic.thumbnail(output_size)
@@ -71,10 +71,10 @@ def add_dish_pic(pic_upload, blog_id):
     filepath = os.path.join(current_app.root_path, 'static\images', storage_name)
     print(filepath)
     
-    output_size = (200, 200)
+    # output_size = (400, 400)
 
     pic = Image.open(pic_upload)
-    pic.thumbnail(output_size)
+    # pic.thumbnail(output_size)
 
     pic.save(filepath)
 

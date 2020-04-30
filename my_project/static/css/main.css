@@ -107,7 +107,18 @@ nav>a:hover {
     background-color: var(--accent_color);
 }
 
-.form-div {
+
+/* Blogs view */
+
+.card-img-top {
+    /* width: 512px; */
+    /* box-shadow: grey 0 0 10px; */
+    height: 288px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+*/ .form-div {
     width: 50%;
     height: 80%;
 }
