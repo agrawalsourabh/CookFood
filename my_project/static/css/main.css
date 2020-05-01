@@ -21,6 +21,21 @@ body {
     position: absolute;
 }
 
+
+/* Nav bar */
+
+.screen-900-1000 {
+    display: none;
+}
+
+nav.navbar {
+    background-color: var(--primary_color);
+}
+
+nav>button#nav-tog {
+    display: none;
+}
+
 nav>a {
     color: var(--nav_item_color);
 }
@@ -31,6 +46,45 @@ nav>a {
 
 nav>a:hover {
     color: var(--nav_item_color_hover)
+}
+
+ul>li>a {
+    color: white;
+}
+
+ul>li>a:hover {
+    color: var(--nav_item_color_hover)
+}
+
+.navbar-left-div {
+    width: 30%;
+}
+
+.navbar-left-list {
+    list-style-type: none;
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    overflow: hidden;
+    font-size: 20px;
+}
+
+.navbar-left-list-items {
+    float: left;
+}
+
+.navbar-left-list-items a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 50px;
+    text-decoration: none;
+}
+
+.navbar-right-items {
+    margin-left: 65%;
+    position: absolute;
 }
 
 #navbarNavDropdown>ul>li>a:hover {
@@ -172,4 +226,54 @@ nav>a:hover {
     margin-left: 20%;
     /* background-color: red; */
     margin-top: 5%;
+}
+
+
+/* Responsive Behaviour */
+
+
+/* Navbar */
+
+@media only screen and (min-width: 1000px) and (max-width: 1200px) {
+    nav.navbar {
+        background-color: green;
+    }
+    .navbar-right-items {
+        background-color: red;
+        margin-left: 55%;
+        position: absolute;
+    }
+    .navbar-left-div {
+        width: 30%;
+        height: 100%;
+        position: absolute;
+        margin-left: 12%;
+        background-color: red;
+    }
+    .navbar-left-list {
+        list-style-type: none;
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        padding: 0;
+        font-size: 20px;
+    }
+    .navbar-left-list-items {
+        float: left;
+        text-align: center;
+        padding-left: 20px;
+        padding-top: 5px;
+    }
+    .navbar-left-list-items a {
+        display: block;
+        color: white;
+        text-decoration: none;
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 900px) and (max-width: 999px) {
+    .screen-1000plus {
+        display: none;
+    }
 }
