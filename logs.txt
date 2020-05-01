@@ -8,3 +8,7 @@ Current working on us-profile_img branch
  01/05/2020
   Adding Responsive Behaviour
     1. Navbar Responsive
+
+ 02/05/2020
+  Adding Responsive Behaviour
+    1. Navbar Responsive - finalise
