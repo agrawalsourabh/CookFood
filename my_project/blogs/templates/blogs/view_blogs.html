@@ -4,9 +4,9 @@
     <div class="container-center">
         <div class="card w-50">
             {% if blog.recipe_img == None %}
-            <img src="{{url_for('static', filename='images/default.jpg')}}" class="card-img-top"> {% else %}
+            <img src="{{url_for('static', filename='images/default.jpg')}}" class=" img-fluid card-img-top"> {% else %}
             <!-- if image is present -->
-            <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="card-img-top"> {% endif %}
+            <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="img-fluid card-img-top"> {% endif %}
             <div class="card-body">
                 <h5 class="card-title">{{blog.dish_name}}</h5>
                 <p class="card-text">{{blog.dish_receipe}}</p>
