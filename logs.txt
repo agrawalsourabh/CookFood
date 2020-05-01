@@ -2,3 +2,7 @@
   1. Blog image column added to the Blog database (nullable is true)
   2. Home page updated... now blog image will display if present else default image display
   3. Update blog functionality added - Go to edit profile -> click on update button under blog section
+  
+ 01/05/2020
+  Adding Responsive Behaviour
+    1. Navbar Responsive
