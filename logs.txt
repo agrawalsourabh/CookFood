@@ -12,3 +12,6 @@ Current working on us-profile_img branch
  02/05/2020
   Adding Responsive Behaviour
     1. Navbar Responsive - finalise
+    
+ 03/05/2020
+  Login and Signup page responsive
