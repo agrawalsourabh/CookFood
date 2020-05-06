@@ -1,0 +1,36 @@
+{% extends "layout.html" %} {% block content %}
+
+
+
+<div class="container-center">
+
+    <form class="form-signin" method="POST">
+        <div class="text-center">
+            <h1><a class="app-title" href="/">CookFood</a></h1>
+        </div>
+        <!-- <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+        {{ form.hidden_tag() }} {{ form.email.label(class_="sr-only")}}
+        <p></p>{{ form.email(class_="form-control", placeholder="Email Address")}}
+        <p></p>
+        {{ form.password.label(class_="sr-only")}} {{ form.password(class_="form-control", placeholder="Password")}}
+        <p></p>
+        <div class="my-button">
+            <div class="row">
+                <div class="col-xs-6" id="signin_btn">
+                    {{ form.submit(class_="btn btn-lg btn-block btn-color")}}
+                </div>
+
+                <div class="col-xs-6" id="blank_div">
+
+                </div>
+
+                <div class="col-xs-6" id="signup_btn">
+                    <a class="btn btn-lg btn-block btn-color" href="/sign_up">Sign up</a>
+                </div>
+            </div>
+        </div>
+        <p></p>
+    </form>
+</div>
+
+{% endblock %}
