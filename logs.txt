@@ -15,3 +15,9 @@ Current working on us-profile_img branch
     
  03/05/2020
   Login and Signup page responsive
+  
+ 06/05/2020
+  Designing Updates
+  Changing it to responsive
+  New branch created - development
+  Index and signup pages responsive behaviour added.
