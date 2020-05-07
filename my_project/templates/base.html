@@ -10,57 +10,56 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-
     <script src="{{url_for('static', filename='js/main.js')}}"></script>
 </head>
 
 <body>
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+    <div class="container">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark">
 
-        <!-- Navbar content -->
-        <a class="navbar-brand" href="{{url_for('blog_bp.view_blogs')}}">CookFood</a>
-        <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
-        <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+            <!-- Navbar content -->
+            <a class="navbar-brand" href="{{url_for('blog_bp.view_blogs')}}"><img src="/static/logos/ChefBook_Nav_Logo.svg" width="30" height="30" class="d-inline-block align-top" alt="ChefBook"></a>
+            <!-- <div class="collapse navbar-collapse" id="navbarNavDropdown"> -->
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapse_target">
+            <div class="collapse navbar-collapse" id="collapse_target">
 
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('blog_bp.view_blogs')}}">Home</a>
-                </li>
-                {% if current_user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{{url_for('blog_bp.create_blog')}}">Add a receipe</a>
-                </li>
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('blog_bp.view_blogs')}}">Home</a>
+                    </li>
+                    {% if current_user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{url_for('blog_bp.create_blog')}}">Add a recipe</a>
+                    </li>
 
-                {% endif %}
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit">Search</button>
-            </form>
-            <ul class="navbar-nav">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-target="dropdown_target" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {% endif %}
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" id="search-input">
+                    <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="submit">Search</button>
+                </form>
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-target="dropdown_target" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Account
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="dropdown_target">
-                        <a class="dropdown-item" href="#">Profile</a>
-                        <a class="dropdown-item" href="/account">Edit Profile</a>
-                        <a class="dropdown-item" href="#">Setting</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{url_for('logout')}}">Logout</a>
-                    </div>
-                </li>
-            </ul>
-        </div>
+                        <div class="dropdown-menu" aria-labelledby="dropdown_target">
+                            <a class="dropdown-item" href="#">Profile</a>
+                            <a class="dropdown-item" href="/account">Edit Profile</a>
+                            <a class="dropdown-item" href="#">Setting</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="{{url_for('logout')}}">Logout</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
 
-        <!-- </div> -->
-    </nav>
-
-    {% block content %}{% endblock %}
-
+            <!-- </div> -->
+        </nav>
+        {% block content %}{% endblock %}
+    </div>
 
 </body>
 

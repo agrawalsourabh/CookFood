@@ -1,22 +1,25 @@
 {% extends "base.html" %} {% block content %}
-<!-- <div class="jumbotron">
-    <form method="POST">
-        {{ form.hidden_tag() }} {{ form.dish_name.label}} <br> {{ form.dish_name}} <br> {{ form.dish_reciepe.label}} <br> {{ form.dish_reciepe}} <br> {{ form.save_blog()}}
-    </form>
-</div> -->
 
-<div class="container-center">
+<div class="container-create-blog">
+    <div class="heading">
+        <p> New Recipe!</p>
+    </div>
     <div class="form-div">
         <form class="form-signin create-blog-form" method="POST">
-            <div class="text-center">
-                <h1>
-                    <p class="app-title">Add a new receipe</p>
-                </h1>
-                {{ form.hidden_tag() }} {{ form.dish_name(class_="form-control", placeholder="Title")}}
-                <p></p>{{ form.dish_reciepe(class_="form-control", placeholder="Reciepe", rows="15")}}
-                <p></p>{{ form.save_blog(class_="btn btn-lg btn-block btn-color")}}
-            </div>
+            <div class="form-inputs">
+                {{ form.hidden_tag() }}
+                <div class="form-group">
+                    {{form.dish_name.label}}
+                    <br> {{ form.dish_name(class_="form-control")}}
+                </div>
+                <div class="form-group">
+                    {{ form.dish_reciepe.label}}
+                    <br> {{ form.dish_reciepe(class_="form-control", rows="10")}}
+
+                </div>
+                {{ form.save_blog(class_="btn")}}
+
         </form>
+        </div>
     </div>
-</div>
-{% endblock %}
+    {% endblock %}

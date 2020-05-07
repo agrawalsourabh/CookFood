@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block content %} {% for blog in blogs_list %}
+
+<div class="body-container">
+    <div class="container-center">
+        <div class="card w-50">
+            {% if blog.recipe_img == None %}
+            <img src="{{url_for('static', filename='images/default.jpg')}}" class=" img-fluid card-img-top"> {% else %}
+            <!-- if image is present -->
+            <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="img-fluid card-img-top"> {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{blog.dish_name}}</h5>
+                <p class="card-text">{{blog.dish_receipe}}</p>
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <a href="#" class="card-link">{{blog.email}}</a>
+                    </div>
+                    <div class="col-6">
+                        <p class="card-text card-link text-right"><small class="text-muted">{{blog.date.strftime("%d/%m/%y")}}</small></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- <h2>{{blog.dish_name}}</h2> <br>
+<h3>{{blog.dish_receipe}}</h3> <br>
+<h4>{{blog.email}}</h4><br>
+<h4>{{blog.date.strftime("%d/%m/%y")}}</h4>
+<hr>  -->
+
+    </div>
+</div>
+
+{% endfor %} {% endblock %}

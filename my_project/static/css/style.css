@@ -27,6 +27,11 @@ body {
     display: flex;
 }
 
+.image_div>img {
+    flex: 0.5;
+    margin: auto;
+}
+
 .form_div {
     flex-basis: 65%;
 }
@@ -67,7 +72,12 @@ body {
     border-radius: 5px;
 }
 
-@media screen and (min-width:900px) {
+
+/*
+    RESPONSIVE 
+ */
+
+@media screen and (min-width:700px) {
     .container-center {
         width: 100%;
         display: flex;
@@ -76,6 +86,9 @@ body {
     .image_div {
         flex-basis: 33%;
         display: flex;
+    }
+    .image_div>img {
+        flex: 1;
     }
     .form_div {
         flex-basis: 65%;
