@@ -21,3 +21,8 @@ Current working on us-profile_img branch
   Changing it to responsive
   New branch created - development
   Index and signup pages responsive behaviour added.
+  
+ 07/05/2020
+  Designing Updates
+  Changing it to responsive
+  Home page and create new blog page  - responsive
