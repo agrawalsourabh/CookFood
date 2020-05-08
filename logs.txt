@@ -26,3 +26,8 @@ Current working on us-profile_img branch
   Designing Updates
   Changing it to responsive
   Home page and create new blog page  - responsive
+  
+  08/05/2020
+    Designing Updates
+    Changing it to responsive
+    Edit Profile page  - responsive
