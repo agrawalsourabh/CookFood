@@ -6,8 +6,8 @@
     --secondary-color: #F9AA33;
     /* Font */
     --small-screen-font-size: 16px;
-    --med-screen-font-size: 18px;
-    --big-screen-font-size: 22px;
+    --med-screen-font-size: 17px;
+    --big-screen-font-size: 20px;
     --heading-font-size: 24px;
 }
 
@@ -57,6 +57,7 @@ nav>div#collapse_target>ul>li>a:active {
 #search-btn {
     border-color: var(--secondary-color);
     color: var(--secondary-color);
+    font-size: var(--small-screen-font-size);
 }
 
 #search-btn:active {
@@ -68,6 +69,9 @@ nav>div#collapse_target>ul>li>a:active {
     background-color: var(--secondary-color);
     color: white;
 }
+
+
+/* --------------------- END NAV BAR ---------------- */
 
 
 /* 
@@ -85,12 +89,14 @@ nav>div#collapse_target>ul>li>a:active {
 }
 
 
+/* --------------------- END VIEW BLOGS ---------------- */
+
+
 /* 
     Create Blog
 */
 
 .container-create-blog {
-    margin-top: 20%;
     flex-basis: 100%;
     margin: auto;
     display: flex;
@@ -115,11 +121,25 @@ nav>div#collapse_target>ul>li>a:active {
     margin: 2%;
 }
 
-.btn {
+.create-btn-div {
+    display: flex;
+}
+
+#add_btn {
+    flex-basis: 25%;
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+
+/* --------------------- END CREATE BLOG ---------------- */
+
+
+/* .btn {
     width: 100%;
     background-color: var(--primary-color);
     color: white;
-}
+} */
 
 
 /*
@@ -128,39 +148,39 @@ nav>div#collapse_target>ul>li>a:active {
 
 @media screen and (min-width:320px) and (max-width:340px) {
     .heading {
-        margin-top: 20%;
-    }
-    .heading>p {
-        font-size: var(--big-screen-font-size);
+        display: none;
     }
 }
 
 @media screen and (min-width:700px) {
-    nav>a>img {
-        width: 70px;
-        height: 70px;
-    }
-    nav>div#collapse_target>ul>li>a {
-        font-size: var(--med-screen-font-size);
-    }
     /* 
         Create blog page
      */
+    .heading {
+        margin-top: 90px;
+    }
     .heading>p {
         font-size: 30px;
     }
 }
 
 @media screen and (min-width:900px) {
-    nav>div#collapse_target>ul>li>a {
-        font-size: var(--big-screen-font-size);
+    /* Navbar */
+    nav>a>img {
+        width: 60px;
+        height: 60px;
     }
     #search-btn {
-        font-size: var(--big-screen-font-size);
+        font-size: var(--med-screen-font-size);
     }
     #search-input {
-        font-size: var(--big-screen-font-size);
+        font-size: var(--med-screen-font-size);
+        color: var(--secondary-color);
     }
+    nav>div#collapse_target>ul>li>a {
+        font-size: var(--med-screen-font-size);
+    }
+    /* End Nav bar */
     .container-center {
         display: flex;
         flex-wrap: wrap;
