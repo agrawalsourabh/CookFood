@@ -16,11 +16,6 @@ from datetime import datetime
 
 blog_bp = Blueprint("blog_bp", __name__, template_folder="templates")
 
-@blog_bp.route("/")
-@login_required
-def blog():
-    return render_template('blogs/blog.html')
-
 @blog_bp.route("/create_blog", methods=['GET', 'POST'])
 @login_required
 def create_blog():
@@ -91,3 +86,9 @@ def update_blog(blog_id):
         
     return render_template('blogs/update_blog.html', blog=blog_to_be_updated, form=form)
     
+
+@blog_bp.route("/<blog_id>")
+@login_required
+def view_blog(blog_id):
+    blog = Blog.query.filter_by(blog_id=blog_id).first()
+    return render_template('blogs/blog.html', blog=blog)

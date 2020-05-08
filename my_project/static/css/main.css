@@ -88,6 +88,15 @@ nav>div#collapse_target>ul>li>a:active {
     margin-top: 20%;
 }
 
+.card>div.card-body>p#recipe_text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* number of lines to show */
+    -webkit-box-orient: vertical;
+}
+
 
 /* --------------------- END VIEW BLOGS ---------------- */
 
@@ -135,11 +144,85 @@ nav>div#collapse_target>ul>li>a:active {
 /* --------------------- END CREATE BLOG ---------------- */
 
 
-/* .btn {
-    width: 100%;
-    background-color: var(--primary-color);
+/* 
+    Account -> Edit Profile
+*/
+
+.classic-tabs {
+    margin-top: 20%;
+}
+
+.classic-tabs>ul>li>a {
+    color: var(--primary-color);
+}
+
+.classic-tabs>ul>li>a:active {
+    color: var(--secondary-color);
+}
+
+.classic-tabs>ul>li>a[tabindex]:focus {
+    color: var(--secondary-color);
+    outline: none;
+}
+
+
+/* Profile */
+
+.container-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.container-profile>div.profile-div {
+    flex-basis: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.container-profile>div.profile-div>picture {
+    flex-basis: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.container-profile>div.profile-div>picture>img {
+    margin: auto;
+    flex-basis: 50%;
+}
+
+.container-profile>div.profile-div>picture>p {
+    margin-top: auto;
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.account-div {
+    display: flex;
+    justify-content: space-around;
+}
+
+.account-div>form {
+    flex-basis: 90%;
+    margin: auto;
+    display: flex;
+}
+
+.account-div>form>div.update-btn {
+    flex-basis: fill;
+    background-color: var(--secondary-color);
+    margin: auto;
+    border-radius: 5px;
+}
+
+#submit_btn {
     color: white;
-} */
+    /* background-color: red; */
+}
+
+
+/* ----------------- END EDIT PROFILE ------------------- */
 
 
 /*
@@ -181,6 +264,9 @@ nav>div#collapse_target>ul>li>a:active {
         font-size: var(--med-screen-font-size);
     }
     /* End Nav bar */
+    /*
+        View Blogs 
+     */
     .container-center {
         display: flex;
         flex-wrap: wrap;
@@ -190,4 +276,11 @@ nav>div#collapse_target>ul>li>a:active {
         align-self: flex-end;
         flex-basis: 40%;
     }
+    .card:hover {
+        cursor: pointer;
+        box-shadow: 0 12px 6px -6px black;
+        border-color: var(--secondary-color);
+        border-width: 2px;
+    }
+    /* End View Blog */
 }

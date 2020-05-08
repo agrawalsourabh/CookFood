@@ -1,73 +1,85 @@
-{% extends "base.html" %} {% block content %}
+ {% extends "base.html" %} {% block content %}
 
+<!-- Classic tabs -->
+<div class="classic-tabs">
 
-<div class="parent-container">
+    <ul class="nav tab" id="myClassicTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="profile-tab-classic" data-toggle="tab" href="#profile-classic" role="tab" aria-controls="profile-classic" aria-selected="true" tabindex="1">Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="follow-tab-classic" data-toggle="tab" href="#recipe-classic" role="tab" aria-controls="recipe-classic" aria-selected="false" tabindex="2">Recipe</a>
+        </li>
 
-    <div class="row justify-content-md-center">
+    </ul>
 
-        <div class="col-4 mycontent-left">
-            <div class="position-fixed">
+    <hr>
 
-                <img class="rounded-circle z-depth-1-half avatar-pic img-thumbnail" id="profile-img" src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" style="width: 200px; height: 200px;">
+    <div class="tab-content" id="myClassicTabContent">
+        <div class="tab-pane fade active show" id="profile-classic" role="tabpanel" aria-labelledby="profile-tab-classic">
 
-                <form class="form-row" method="POST" enctype="multipart/form-data">
-                    {{ form.hidden_tag() }}
-                    <div class="form-group">
-                        {{ form.profile_pic(class="form-control", onchange="readURL(this);")}}
-                        <div class="user-details">
-                            {{ form.email.label(class="padded_label")}} {{ form.email(value= user_info.email, class="form-control", readonly="readonly") }} {{form.first_name.label(class="padded_label")}} {{ form.first_name(class=" form-control ", value= user_info.first_name) }}
-                            {{form.last_name.label(class="padded_label")}} {{ form.last_name(class="form-control ", value=user_info.last_name) }}
-                        </div>
-                    </div>
-                    <!-- <div class="form-group">
-                        
-                    </div> -->
-                    <div class="update-btn">
-                        {{ form.submit(class_="btn btn-block btn-color")}}
-                        <!-- <button type="submit">Uploooooad</button> -->
-
-                    </div>
-                </form>
-            </div>
-
-        </div>
-
-        <!-- Blog section -->
-
-        <div class="col-8 ">
-
-            {% for blog in blogs_list %}
-            <!-- <div class="container-center"> -->
-            <div class="card-container">
-                <div class="card w-50">
-                    {% if blog.recipe_img == None %}
-                    <img src="{{ url_for('static', filename='images/default.jpg') }}" class="card-img-top"> {% else %}
-                    <img src="{{ url_for('static', filename='images/'+blog.recipe_img) }}" class="card-img-top"> {% endif %}
-
-
-                    <div class="card-body">
-                        <h5 class="card-title">{{blog.dish_name}}</h5>
-                        <p class="card-text">{{blog.dish_receipe}}</p>
-
-                    </div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-6">
-                                <a href="#" class="card-link">{{blog.email}}</a>
-                            </div>
-                            <div class="col-6">
-                                <p class="card-text card-link text-right"><small class="text-muted">{{blog.date.strftime("%d/%m/%y")}}</small></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <a class="btn btn-block btn-color" href="{{url_for('blog_bp.update_blog', blog_id=blog.blog_id)}}"> Update Blog</a>
-                    </div>
+            <div class="container-profile">
+                <div class="profile-div">
+                    <picture>
+                        <img class="rounded-circle z-depth-1-half" src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" id="profile-img">
+                        <p id="user_email">{{user_info.email}}</p>
+                    </picture>
                 </div>
 
-            </div>
-            <!-- </div> -->
-            {% endfor %}
+                <div class="account-div">
+                    <form class="form-row" method="POST" enctype="multipart/form-data">
+                        {{ form.hidden_tag() }}
+                        <div class="form-group">
+                            {{ form.profile_pic(class="form-control", onchange="readURL(this);")}}
+                            <div class="user-details">
+                                {{form.first_name.label(class="padded_label")}} {{ form.first_name(class=" form-control ", value= user_info.first_name) }} {{form.last_name.label(class="padded_label")}} {{ form.last_name(class="form-control ", value=user_info.last_name) }}
+                            </div>
 
+
+                        </div>
+                        <!-- <div class="form-group">
+                            
+                        </div> -->
+                        <div class="update-btn">
+
+                            <!-- <button type="submit">Uploooooad</button> -->
+                            {{ form.submit(class_="btn", id="submit_btn")}}
+
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        {% endblock %}
+        <div class="tab-pane fade" id="recipe-classic" role="tabpanel" aria-labelledby="follow-tab-classic">
+            {% for blog in blogs_list %}
+            <div class="card" onclick="window.location='/blogs/{{blog.blog_id}}';">
+                {% if blog.recipe_img == None %}
+                <img src="{{url_for('static', filename='images/default.jpg')}}" class=" img-fluid card-img-top"> {% else %}
+                <!-- if image is present -->
+                <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="img-fluid card-img-top"> {% endif %}
+                <div class="card-body">
+                    <h5 class="card-title">{{blog.dish_name}}</h5>
+                    <p class="card-text" id="recipe_text">{{blog.dish_receipe}}</p>
+
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="#" class="card-link">{{blog.email}}</a>
+                        </div>
+                        <div class="col-6">
+                            <p class="card-text card-link text-right"><small class="text-muted">{{blog.date.strftime("%d/%m/%y")}}</small></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            {% endfor %}
+        </div>
+
+    </div>
+
+</div>
+<!-- Classic tabs -->
+
+{% endblock %}

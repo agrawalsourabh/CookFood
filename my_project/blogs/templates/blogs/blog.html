@@ -1,6 +1,31 @@
 {% extends "base.html" %} {% block content %}
-<div class="jumbotron">
-    <a href="{{url_for('blog_bp.create_blog')}}">Create a new blog</a>
-    <a href="{{url_for('blog_bp.view_blogs')}}"> View all blogs </a>
+
+<div class="container-center">
+    <div class="card">
+        {% if blog.recipe_img == None %}
+        <img src="{{url_for('static', filename='images/default.jpg')}}" class=" img-fluid card-img-top"> {% else %}
+        <!-- if image is present -->
+        <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="img-fluid card-img-top"> {% endif %}
+        <div class="card-body">
+            <h5 class="card-title">{{blog.dish_name}}</h5>
+            <p class="card-text">{{blog.dish_receipe}}</p>
+
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-6">
+                    <a href="#" class="card-link">{{blog.email}}</a>
+                </div>
+                <div class="col-6">
+                    <p class="card-text card-link text-right"><small class="text-muted">{{blog.date.strftime("%d/%m/%y")}}</small></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>
+
+
+
+
 {% endblock %}
