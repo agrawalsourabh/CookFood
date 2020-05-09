@@ -149,7 +149,10 @@ nav>div#collapse_target>ul>li>a:active {
 */
 
 .classic-tabs {
+    flex-basis: 100%;
+    /* margin: auto; */
     margin-top: 20%;
+    /* background-color: khaki; */
 }
 
 .classic-tabs>ul>li>a {
@@ -190,6 +193,8 @@ nav>div#collapse_target>ul>li>a:active {
 .container-profile>div.profile-div>picture>img {
     margin: auto;
     flex-basis: 50%;
+    border-radius: 50%;
+    max-width: 200px;
 }
 
 .container-profile>div.profile-div>picture>p {
@@ -207,6 +212,14 @@ nav>div#collapse_target>ul>li>a:active {
     flex-basis: 90%;
     margin: auto;
     display: flex;
+}
+
+.account-div>form>div.form-group {
+    flex-basis: 100%;
+}
+
+.account-div>form>div.form-group>div.user-details {
+    margin-top: 5%;
 }
 
 .account-div>form>div.update-btn {
@@ -244,6 +257,25 @@ nav>div#collapse_target>ul>li>a:active {
     }
     .heading>p {
         font-size: 30px;
+    }
+    /* 
+        View Blog (single)
+    */
+    #view_blog_card {
+        flex-basis: 70%;
+    }
+    /* 
+        Account -> Edit Profile
+    */
+    .container>div.tab-container-center {
+        flex-basis: 100%;
+    }
+    .container-profile>div.profile-div>picture {
+        flex-basis: 100%;
+        /* background-color: red; */
+    }
+    .container-profile>div.profile-div>picture>img {
+        max-width: 300px;
     }
 }
 

@@ -30,12 +30,13 @@ def account_view():
         first_name = form.first_name.data
         last_name = form.last_name.data
         email = form.email.data # disabled
+        print(current_user.email)
         print("On subbmit")
         print(form.profile_pic.data)
 
         if form.profile_pic.data:
             print(form.profile_pic.data)
-            pic = add_profile_pic(pic_upload=form.profile_pic.data, email=email)
+            pic = add_profile_pic(pic_upload=form.profile_pic.data, email=current_user.email)
             user_info.profile_image = pic
             print("Image uploaded")
 

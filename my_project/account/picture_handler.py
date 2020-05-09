@@ -11,12 +11,14 @@ IMG_UPLOAD_EXT = ['PNG', 'JPG' 'JPEG']
 def add_profile_pic(pic_upload, email):
     filename = pic_upload.filename
     ext_type = filename.split('.')[-1]
+    print(ext_type)
 
     # email_hash = bcrypt.generate_password_hash(email).decode('utf-8')
 
     delete_file_if_exists(email)
 
     storage_name = str(email) + '.' + ext_type
+    print("storage name: " + storage_name)
 
     filepath = os.path.join(current_app.root_path, 'static\profile_pics', storage_name)
     print(filepath)
