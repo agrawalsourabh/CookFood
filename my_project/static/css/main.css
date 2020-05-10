@@ -238,6 +238,39 @@ nav>div#collapse_target>ul>li>a:active {
 /* ----------------- END EDIT PROFILE ------------------- */
 
 
+/* 
+    Setting Page
+ */
+
+.container-setting {
+    width: 100%;
+    margin-top: 20%;
+    background-color: rgb(221, 137, 137);
+    display: flex;
+    flex-direction: column;
+}
+
+.container-setting>div.heading {
+    flex-basis: 10%;
+    background-color: rgb(71, 100, 71);
+}
+
+.container-setting#accordionExample {
+    flex-basis: 20%;
+    margin: 0;
+    background-color: red;
+}
+
+.accordion>div.card.noshadow {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+
+/* ----------------- END SETTING ------------------- */
+
+
 /*
     RESPONSIVE
  */
