@@ -245,20 +245,46 @@ nav>div#collapse_target>ul>li>a:active {
 .container-setting {
     width: 100%;
     margin-top: 20%;
-    background-color: rgb(221, 137, 137);
     display: flex;
     flex-direction: column;
 }
 
 .container-setting>div.heading {
     flex-basis: 10%;
-    background-color: rgb(71, 100, 71);
+}
+
+.container-setting>div.heading>h2 {
+    color: var(--primary-light-color);
 }
 
 .container-setting#accordionExample {
     flex-basis: 20%;
     margin: 0;
     background-color: red;
+}
+
+.card>div#collapsePassword>div.card-body>form>div.form-btn>div.change_password_btn>input[type=submit] {
+    /* width: 60%; */
+    background-color: var(--primmary-dark-color);
+    border-radius: 8px;
+    color: white;
+    min-height: 40px;
+}
+
+.card>div#collapsePassword>div.card-body>form>div.form-btn>div.change_password_btn>input[type=submit]:hover {
+    /* width: 60%; */
+    background-color: var(--primary-color);
+}
+
+.card>div#collapseDeactivate>div.card-body>input[type=button] {
+    background-color: var(--primmary-dark-color);
+    border-radius: 8px;
+    color: white;
+    min-height: 40px;
+}
+
+.accordion>div.card {
+    margin-top: 0;
 }
 
 .accordion>div.card.noshadow {
