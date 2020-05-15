@@ -41,3 +41,8 @@ Current working on us-profile_img branch
     Designing Updates
     Changing it to responsive
     setting page - Change Password - I  - responsive
+    
+ 15/05/2020
+    Designing Updates
+    Changing it to responsive
+    setting page - Deactivate Account - I  - responsive
