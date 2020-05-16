@@ -46,3 +46,10 @@ Current working on us-profile_img branch
     Designing Updates
     Changing it to responsive
     setting page - Deactivate Account - I  - responsive
+
+  16/05/2020
+    Designing Updates
+    Changing it to responsive
+    Responsive Images - 1
+
+    local development & master remote development and master all sync
