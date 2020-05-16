@@ -1,4 +1,48 @@
+Current working on us-profile_img branch
+
 30/04/2020
   1. Blog image column added to the Blog database (nullable is true)
   2. Home page updated... now blog image will display if present else default image display
   3. Update blog functionality added - Go to edit profile -> click on update button under blog section
+  
+ 01/05/2020
+  Adding Responsive Behaviour
+    1. Navbar Responsive
+
+ 02/05/2020
+  Adding Responsive Behaviour
+    1. Navbar Responsive - finalise
+    
+ 03/05/2020
+  Login and Signup page responsive
+  
+ 06/05/2020
+  Designing Updates
+  Changing it to responsive
+  New branch created - development
+  Index and signup pages responsive behaviour added.
+  
+ 07/05/2020
+  Designing Updates
+  Changing it to responsive
+  Home page and create new blog page  - responsive
+  
+  08/05/2020
+    Designing Updates
+    Changing it to responsive
+    Edit Profile page  - responsive
+    
+ 10/05/2020
+    Designing Updates
+    Changing it to responsive
+    setting page - I  - responsive
+    
+ 11/05/2020
+    Designing Updates
+    Changing it to responsive
+    setting page - Change Password - I  - responsive
+    
+ 15/05/2020
+    Designing Updates
+    Changing it to responsive
+    setting page - Deactivate Account - I  - responsive
