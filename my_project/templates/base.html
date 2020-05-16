@@ -42,9 +42,8 @@
                 </form>
                 <ul class="navbar-nav">
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" data-target="dropdown_target" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Account
-                    </a>
+                        <img class="nav-link dropdown-toggle profile_image" href="#" src="{{url_for('static', filename='profile_pics_70by70/'+profile_image)}}" data-target="dropdown_target" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        </img>
                         <div class="dropdown-menu" aria-labelledby="dropdown_target">
                             <a class="dropdown-item" href="#">Profile</a>
                             <a class="dropdown-item" href="/account">Edit Profile</a>

@@ -22,7 +22,10 @@
                 <div class="container-profile">
                     <div class="profile-div">
                         <picture>
-                            <img src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" id="profile-img">
+                            <source media="(min-width: 900px)" srcset="{{url_for('static', filename='profile_pics_220by220/'+user_info.profile_image)}}">
+                            <source media="(min-width: 700px)" srcset="{{url_for('static', filename='profile_pics_200by200/'+user_info.profile_image)}}">
+                            <source media="(min-width: 360px)" srcset="{{url_for('static', filename='profile_pics_128by128/'+user_info.profile_image)}}">
+                            <img src="{{url_for('static', filename='profile_pics_128by128/'+user_info.profile_image)}}" id="profile-img" alt="profile image">
                             <p id="user_email">{{user_info.email}}</p>
                         </picture>
                     </div>

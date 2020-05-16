@@ -8,7 +8,7 @@
         <div class="col-4 mycontent-left">
             <div class="position-fixed">
 
-                <img class="rounded-circle z-depth-1-half avatar-pic img-thumbnail" id="profile-img" src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" style="width: 200px; height: 200px;">
+                <img class="rounded-circle " id="profile-img" src="{{url_for('static', filename='profile_pics/'+user_info.profile_image)}}" style="width: 128px; height: 128px;">
 
                 <form class="form-row" method="POST" enctype="multipart/form-data">
                     {{ form.hidden_tag() }}

@@ -70,6 +70,12 @@ nav>div#collapse_target>ul>li>a:active {
     color: white;
 }
 
+img.profile_image {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+
 
 /* --------------------- END NAV BAR ---------------- */
 
@@ -188,17 +194,23 @@ nav>div#collapse_target>ul>li>a:active {
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    background-color: hsl(0, 17%, 95%);
+    align-content: center;
+    height: 200px;
 }
 
 .container-profile>div.profile-div>picture>img {
     margin: auto;
+    margin-top: 10px;
     flex-basis: 50%;
     border-radius: 50%;
-    max-width: 200px;
+    width: 128px;
+    max-height: 128px;
+    background: center;
 }
 
 .container-profile>div.profile-div>picture>p {
-    margin-top: auto;
+    margin-top: 10px;
     text-align: center;
     color: var(--primary-color);
 }
@@ -211,6 +223,7 @@ nav>div#collapse_target>ul>li>a:active {
 .account-div>form {
     flex-basis: 90%;
     margin: auto;
+    margin-top: 10px;
     display: flex;
 }
 
@@ -283,6 +296,25 @@ nav>div#collapse_target>ul>li>a:active {
     min-height: 40px;
 }
 
+input[type=submit].primary-btn {
+    border-width: 1px;
+    border-color: var(--primmary-dark-color);
+    background-color: var(--primmary-dark-color);
+    border-radius: 8px;
+    color: white;
+    min-height: 40px;
+    min-width: 60px;
+}
+
+button[type=button].secondary-btn {
+    border-width: 1px;
+    border-color: var(--primmary-dark-color);
+    border-radius: 8px;
+    color: var(--primary-light-color);
+    min-height: 40px;
+    min-width: 60px;
+}
+
 .accordion>div.card {
     margin-top: 0;
 }
@@ -327,14 +359,17 @@ nav>div#collapse_target>ul>li>a:active {
         Account -> Edit Profile
     */
     .container>div.tab-container-center {
+        margin-top: -10%;
         flex-basis: 100%;
     }
     .container-profile>div.profile-div>picture {
-        flex-basis: 100%;
+        flex-basis: 35%;
+        height: 280px;
         /* background-color: red; */
     }
     .container-profile>div.profile-div>picture>img {
-        max-width: 300px;
+        width: 200px;
+        max-height: 200px;
     }
 }
 
@@ -374,4 +409,16 @@ nav>div#collapse_target>ul>li>a:active {
         border-width: 2px;
     }
     /* End View Blog */
+    /* 
+        Edit Profile -> Profile
+     */
+    .container-profile>div.profile-div>picture {
+        flex-basis: 30%;
+        height: 300px;
+        /* background-color: red; */
+    }
+    .container-profile>div.profile-div>picture>img {
+        width: 220px;
+        max-height: 220px;
+    }
 }

@@ -6,7 +6,8 @@ from flask_login import login_required, login_user, logout_user, current_user
 from my_project.login.forms import Login
 
 # import signup  model
-from my_project.sign_up.models import User
+from my_project.sign_up.models import User, UserInfo
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
@@ -20,7 +21,7 @@ def index():
 
         if user.check_password(password) and user is not None:
             # login_user is the method of Login class
-            login_user(user)    
+            login_user(user)
 
             next = request.args.get('next')
 

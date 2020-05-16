@@ -11,15 +11,19 @@ from my_project.blogs.forms import CreateBlog
 
 # Models
 from my_project.blogs.models import Blog
+from my_project.sign_up.models import UserInfo
 
 from datetime import datetime
 
 blog_bp = Blueprint("blog_bp", __name__, template_folder="templates")
 
+
 @blog_bp.route("/create_blog", methods=['GET', 'POST'])
 @login_required
 def create_blog():
     form = CreateBlog()
+    # Username
+    from my_project.current_username import user_name
 
     if form.validate_on_submit():
         dish_name = form.dish_name.data
@@ -36,19 +40,26 @@ def create_blog():
 
         return redirect(url_for('blog_bp.view_blogs'))
 
-    return render_template('blogs/create_blog.html', form=form)
+    return render_template('blogs/create_blog.html', form=form, profile_image=user_name())
 
 
 @blog_bp.route("/view_blogs")
 @login_required
 def view_blogs():
-
+    # Username
+    from my_project.current_username import user_name
+    
     blogs_list = Blog.query.order_by(desc(Blog.date)).all()
-    return render_template('blogs/view_blogs.html', blogs_list=blogs_list)
+    return render_template('blogs/view_blogs.html', blogs_list=blogs_list, profile_image=user_name())
 
 @blog_bp.route("/update_blog/<blog_id>", methods=['GET', 'POST'])
 @login_required
 def update_blog(blog_id):
+
+    # Username
+    from my_project.current_username import user_name
+
+
     blog_to_be_updated = Blog.query.filter_by(blog_id=blog_id).first()
     print(blog_to_be_updated.dish_name)
     print(blog_to_be_updated.dish_receipe)
@@ -84,11 +95,13 @@ def update_blog(blog_id):
 
 
         
-    return render_template('blogs/update_blog.html', blog=blog_to_be_updated, form=form)
+    return render_template('blogs/update_blog.html', blog=blog_to_be_updated, form=form, profile_image=user_name())
     
 
 @blog_bp.route("/<blog_id>")
 @login_required
 def view_blog(blog_id):
+    # Username
+    from my_project.current_username import user_name
     blog = Blog.query.filter_by(blog_id=blog_id).first()
-    return render_template('blogs/blog.html', blog=blog)
+    return render_template('blogs/blog.html', blog=blog, profile_image=user_name())

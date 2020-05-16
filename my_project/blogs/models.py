@@ -14,7 +14,7 @@ class Blog(db.Model):
     recipe_img = db.Column(db.String(80), nullable=True)
 
     email = db.Column(db.String(80), db.ForeignKey('users.email'), nullable=False)
-    user = db.relationship('User', backref=db.backref('blogs', lazy=True))
+    user = db.relationship('User', backref=db.backref('blogs', lazy=True, cascade="all,delete"))
     
 
     def __init__(self, email, dish_name, dish_receipe, count):

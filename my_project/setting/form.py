@@ -14,5 +14,8 @@ class PasswordForm(FlaskForm):
 
     submit = SubmitField("Change Password")
 
+class DeactivateUserForm(FlaskForm):
+    submit = SubmitField("Yes")
+
 
     

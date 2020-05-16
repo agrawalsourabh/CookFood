@@ -22,6 +22,9 @@ account_view_bp = Blueprint("account_view_bp", __name__, template_folder='templa
 def account_view():
     form = UpdateAccount()
 
+    # Username
+    from my_project.current_username import user_name
+
     user_info = UserInfo.query.filter_by(email=current_user.email).first()
     blogs_list = Blog.query.order_by(desc(Blog.date)).filter_by(email=current_user.email).all()
 
@@ -58,7 +61,7 @@ def account_view():
     
     
 
-    return render_template('account/update_account.html', form=form, user_info=user_info, blogs_list=blogs_list)
+    return render_template('account/update_account.html', form=form, user_info=user_info, blogs_list=blogs_list, profile_image=user_name())
 
 
         

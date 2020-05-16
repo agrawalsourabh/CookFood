@@ -29,6 +29,8 @@ class User(db.Model, UserMixin):
     def check_password(self, password):
         return bcrypt.check_password_hash(self.password_hash, password=password)
 
+    def set_password(self, password):
+        self.password_hash = bcrypt.generate_password_hash(password=password)
 
 class UserInfo(db.Model):
 
@@ -41,7 +43,7 @@ class UserInfo(db.Model):
         nullable=False)
     profile_image = db.Column(db.String(80), nullable=False, default='default.png')
 
-    user = db.relationship('User',backref=db.backref('usersinfo', lazy=True))
+    user = db.relationship('User',backref=db.backref('usersinfo', lazy=True, cascade="all,delete"))
 
     def __init__(self, first_name, last_name):
         self.first_name = first_name
