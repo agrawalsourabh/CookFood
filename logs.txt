@@ -53,3 +53,6 @@ Current working on us-profile_img branch
     Responsive Images - 1
 
     local development & master remote development and master all sync
+
+   17/05/2020
+      blog image responsive
