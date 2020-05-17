@@ -90,6 +90,10 @@ img.profile_image {
     box-shadow: 0 8px 6px -6px black;
 }
 
+.card>img {
+    width: 100%;
+}
+
 .card:first-child {
     margin-top: 20%;
 }

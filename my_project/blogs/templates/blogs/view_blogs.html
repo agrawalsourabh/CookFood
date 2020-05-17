@@ -4,13 +4,21 @@
     {% for blog in blogs_list %}
     <div class="card" onclick="window.location='/blogs/{{blog.blog_id}}';">
         {% if blog.recipe_img == None %}
-        <img src="{{url_for('static', filename='images/default.jpg')}}" class=" img-fluid card-img-top"> {% else %}
+        <picture>
+            <source media="(min-width: 700px)" srcset="{{url_for('static', filename='images/blogs700/default.jpg')}}">
+            <source media="(min-width: 360px)" srcset="{{url_for('static', filename='images/blogs350/default.jpg')}}">
+            <img src="{{url_for('static', filename='images/default.jpg')}}" class=" img-fluid card-img-top">
+        </picture>
+        {% else %}
         <!-- if image is present -->
-        <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="img-fluid card-img-top"> {% endif %}
+        <picture>
+            <source media="(min-width: 700px)" srcset="{{url_for('static', filename='images/blogs700/'+blog.recipe_img)}}">
+            <source media="(min-width: 360px)" srcset="{{url_for('static', filename='images/blogs350/'+blog.recipe_img)}}">
+            <img src="{{url_for('static', filename='images/'+blog.recipe_img)}}" class="img-fluid card-img-top">
+        </picture> {% endif %}
         <div class="card-body">
             <h5 class="card-title">{{blog.dish_name}}</h5>
             <p class="card-text" id="recipe_text">{{blog.dish_receipe}}</p>
-
         </div>
         <div class="card-body">
             <div class="row">
