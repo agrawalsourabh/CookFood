@@ -18,19 +18,40 @@ def add_profile_pic(pic_upload, email):
     delete_file_if_exists(email)
 
     storage_name = str(email) + '.' + ext_type
-    print("storage name: " + storage_name)
-
-    filepath = os.path.join(current_app.root_path, 'static\profile_pics', storage_name)
-    print(filepath)
     
-    output_size = (400, 400)
-
-    pic = Image.open(pic_upload)
-    pic.thumbnail(output_size)
-
-    pic.save(filepath)
-
+    saveFile(pic_upload, filepath='static\profile_pics_70by70', storage_name=storage_name, new_width=70)
+    saveFile(pic_upload, filepath='static\profile_pics_128by128', storage_name=storage_name, new_width=128)
+    saveFile(pic_upload, filepath='static\profile_pics_200by200', storage_name=storage_name, new_width=200)
+    saveFile(pic_upload, filepath='static\profile_pics_220by220', storage_name=storage_name, new_width=220)
     return storage_name
+
+
+def saveFile(pic_upload, filepath, storage_name, new_width):
+
+    filename = os.path.join(current_app.root_path, filepath, storage_name)
+    pic = Image.open(pic_upload)
+
+    print('Image size')
+    print(pic.height)
+
+    if pic.height > pic.width:
+        aspect_ratio = int(pic.height / pic.width)
+        new_height = int(aspect_ratio * new_width)
+    
+    else:
+        aspect_ratio = int(pic.width / pic.height)
+        new_height = int( new_width / aspect_ratio)
+
+    print("ratio: " + str(aspect_ratio))
+
+    print("new_width" + str(new_width))
+    print("new_height" + str(new_height))
+
+    output_size = (new_width, new_height)
+
+    pic.resize(output_size)
+    pic.save(filename)
+
 
 
 def is_image(file_name):
