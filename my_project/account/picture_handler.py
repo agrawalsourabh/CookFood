@@ -49,7 +49,7 @@ def saveFile(pic_upload, filepath, storage_name, new_width):
 
     output_size = (new_width, new_height)
     print(filename)
-    pic.resize(output_size)
+    pic.thumbnail(output_size)
     pic.save(filename)
 
 
