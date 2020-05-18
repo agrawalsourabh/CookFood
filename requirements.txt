@@ -27,7 +27,6 @@ PyAAVF==0.1.0
 pycodestyle==2.5.0
 pycparser==2.20
 pylint==2.4.4
-pypiwin32==223
 python-dateutil==2.8.1
 python-editor==1.0.4
 six==1.14.0
