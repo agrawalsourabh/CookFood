@@ -35,11 +35,11 @@ def saveFile(pic_upload, filepath, storage_name, new_width):
     print(pic.height)
 
     if pic.height > pic.width:
-        aspect_ratio = int(pic.height / pic.width)
+        aspect_ratio = (pic.height / pic.width)
         new_height = int(aspect_ratio * new_width)
     
     else:
-        aspect_ratio = int(pic.width / pic.height)
+        aspect_ratio = (pic.width / pic.height)
         new_height = int( new_width / aspect_ratio)
 
     print("ratio: " + str(aspect_ratio))
@@ -48,7 +48,7 @@ def saveFile(pic_upload, filepath, storage_name, new_width):
     print("new_height" + str(new_height))
 
     output_size = (new_width, new_height)
-
+    print(filename)
     pic.resize(output_size)
     pic.save(filename)
 
