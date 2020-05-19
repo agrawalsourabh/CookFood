@@ -56,3 +56,7 @@ Current working on us-profile_img branch
 
    17/05/2020
       blog image responsive
+
+   18/05/2020
+      Deployed to Heroku
+      https://chef-book.herokuapp.com/
